@@ -1,3 +1,4 @@
+"use client"
 import ItemsTable from '@/components/table/ItemsTable';
 
 
