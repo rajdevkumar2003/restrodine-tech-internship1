@@ -16,7 +16,7 @@ const ItemsTable = () => {
     };
 
     fetchItems();
-  }, []);
+  }, [items]);
 
   const handleDelete = async (id) => {
     try {
