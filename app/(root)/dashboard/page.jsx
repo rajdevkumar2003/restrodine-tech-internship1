@@ -17,7 +17,7 @@ export default function Home() {
     };
 
     fetchItems();
-  }, [items]);
+  }, []);
 
   const handleDelete = async (id) => {
     try {
