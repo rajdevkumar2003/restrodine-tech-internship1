@@ -20,7 +20,7 @@ const ItemsTable = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/delete-item?id=${id}`, {
+      const response = await fetch(`https://restrodine-tech-internship1.vercel.app/api/delete-item?id=${id}`, {
         method: "DELETE"
       });
   
