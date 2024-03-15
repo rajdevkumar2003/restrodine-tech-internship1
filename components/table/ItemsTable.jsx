@@ -20,14 +20,13 @@ const ItemsTable = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`api/delete-item/${id}`, {
+      const response = await fetch(`http://localhost:3000/api/delete-item?id=${id}`, {
         method: "DELETE"
       });
   
       if (response.ok) {
-        const data = await response.json();
-        console.log(data.message);
-        router.reload();
+        
+        router.refresh();
       }
     } catch (error) {
       console.log(error);

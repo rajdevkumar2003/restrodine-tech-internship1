@@ -4,11 +4,11 @@ import { NextResponse } from "next/server";
 
 export async function DELETE(req) {
     try {
-        const { id } = req.query;
+        const id = req.nextUrl.searchParams.get("id");
         
         await connectMongodb();
     
-        await Item.deleteOne({_id:ObjectId(id)});
+        await Item.findByIdAndDelete(id);
     
         return NextResponse.json({ message: "Item deleted." }, { status: 201 });
       } catch (error) {
