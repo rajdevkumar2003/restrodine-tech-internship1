@@ -10,7 +10,7 @@ const ItemsTable = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const response = await fetch("api/get-items");
+      const response = await fetch("https://restrodine-tech-internship1.vercel.app/api/get-items");
       const data = await response.json();
       setItems(data);
     };
@@ -43,7 +43,7 @@ const ItemsTable = () => {
           <div className="flex-grow border p-4">ETA</div>
         </div>
 
-        {items.map((item, id) => (
+        {items&&items.map((item, id) => (
           <div key={id} className="flex flex-row ">
             <div className="flex-grow border-gray border-b-2  w-full p-4 text-sm">
               {item.category}
