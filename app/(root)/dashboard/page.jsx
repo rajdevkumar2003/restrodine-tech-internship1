@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const response = await fetch("https://restrodine-tech-internship1-git-main-rajdevkumar2003s-projects.vercel.app/api/get-items");
+      const response = await fetch("https://restrodine-tech-internship1.vercel.app/api/get-items");
       const data = await response.json();
       setItems(data);
     };
@@ -21,7 +21,7 @@ export default function Home() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://restrodine-tech-internship1-git-main-rajdevkumar2003s-projects.vercel.app/api/delete-item?id=${id}`, {
+      const response = await fetch(`https://restrodine-tech-internship1.vercel.app/api/delete-item?id=${id}`, {
         method: "DELETE"
       });
   
