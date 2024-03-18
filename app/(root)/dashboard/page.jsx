@@ -35,15 +35,16 @@ export default function Home() {
      
   };
   return (
-    <div className="px-6 py-4 ml-7 ">
+    <div className="px-6 py-4 ml-7 flex flex-col gap-7 ">
       <h1 className="font-semibold text-2xl text-purple ">Menu Dashboard</h1>
+      <div className=" flex w-fit">
       <svg
-        width="1130"
+        width=""
         height="116"
         viewBox="0 0 1130 116"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="max-md:hidden min-w-[300px] max-lg:h-[60px]"
+        className="max-md:hidden lg:w-600px xl:w-full flex items-start max-lg:h-[60px]"
       >
         <rect y="52.6" width="266" height="50" rx="3" fill="white" />
         <rect
@@ -103,6 +104,7 @@ export default function Home() {
           fill="#77248B"
         />
       </svg>
+      </div>
       
       {/* items table */}
       <div className="w-full border-black border-1  shadow-md   mt-9">

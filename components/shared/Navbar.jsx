@@ -6,15 +6,15 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center w-full h-[56px] mb-8">
-      <h1 className="font-semibold text-3xl text-purple ">RestroDineTech</h1>
+    <div className="flex justify-between gap-5 items-center w-full h-[56px] mb-8 ">
+      <h1 className="font-semibold text-3xl max-md:text-2xl text-purple ">RestroDineTech</h1>
       <svg
         width="688"
         height="45"
         viewBox="0 0 688 45"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-[200px]  max-md:hidden md:w-[688px] "
+        className="w-[150px]   max-md:hidden md:w-[600px] "
       >
         <rect width="687.75" height="44.4421" rx="3" fill="white" />
         <rect
@@ -49,7 +49,7 @@ const Header = () => {
       <div>
         <svg
          onClick={()=>signOut()}
-          width="101"
+          width="80"
           height="34"
           viewBox="0 0 101 34"
           fill="none"
