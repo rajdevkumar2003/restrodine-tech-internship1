@@ -7,10 +7,14 @@ export async function DELETE(req) {
         const id = req.nextUrl.searchParams.get("id");
         
         await connectMongodb();
-    
+
+        
+
+        const item=await Item.findById(id);
         await Item.findByIdAndDelete(id);
+        
     
-        return NextResponse.json({ message: "Item deleted." }, { status: 201 });
+        return NextResponse.json(item);
       } catch (error) {
         return NextResponse.json({ message: "An error occured." }, { status: 500 });
       }

@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import {AuthProvider} from "./Providers"
+import { AuthProvider } from "./Providers";
+import { ToastContainer } from "./nextToast";
+import { Bounce } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +16,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <AuthProvider>{children}</AuthProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
       </body>
     </html>
   );

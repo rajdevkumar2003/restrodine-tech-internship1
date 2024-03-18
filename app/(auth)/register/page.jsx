@@ -297,7 +297,7 @@ const page = () => {
       <button className="flex mt-5 mx-auto bg-purple text-white rounded-md px-8 py-2">
         Sign In
       </button>
-      {errorTxt&&(<p className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-1">{errorTxt}</p>)}
+      {errorTxt&&(<p className="bg-red-500 text-white w-fit text-sm py-1 px-3 text-center mx-auto rounded-md mt-1">{errorTxt}</p>)}
 
       <p className="mt-2 items-center flex justify-center">
         Already have an account?{" "}

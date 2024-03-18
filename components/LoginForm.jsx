@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const LoginForm = () => {
@@ -17,26 +19,35 @@ const LoginForm = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+    if(!email){
+      seterrorTxt("Enter email");
+        
+        return;
+    }
+
     try {
       const res = await signIn("credentials", {
-        email,
+        email:email.toLowerCase(),
         password,
         redirect: false,
       });
 
       if (res.error) {
         seterrorTxt("Invalid Credentials");
+        toast("Password is wrong!")
         return;
       }
-
+      
       router.replace("dashboard");
+      toast("Login successful!");
     } catch (error) {
+      toast("Something is wrong, try again later")
       console.log(error);
     }
   }
   
   return (
-    <div className="rounded-md bg-white min-h-[560px] w-[374px] px-5 py-4">
+    <div className="rounded-md bg-white min-h-[560px] w-[374px] mb-10 px-5 py-4">
         <h2 className="text-black font-semibold ">Welcome to</h2>
         <h1 className="font-bold text-3xl text-purple py-3 ">RestroDineTech</h1>
         <div className="flex flex-col gap-3">
@@ -244,7 +255,7 @@ const LoginForm = () => {
         
 
         <button className="flex mt-4 mx-auto bg-purple text-white rounded-md px-8 py-2">Sign In</button>
-        {errorTxt&&(<p className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-1">{errorTxt}</p>)}
+        {errorTxt&&(<p className="bg-red-500 text-center mx-auto text-white w-fit text-sm py-1 px-3 rounded-md mt-1">{errorTxt}</p>)}
         <p className='mt-3 items-center flex justify-center'>Don't have an account? <span className='underline'><Link href={'/register'}>Register</Link></span></p>
 
         </form>

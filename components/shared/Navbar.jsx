@@ -4,6 +4,7 @@ import { signOut } from "next-auth/react";
 
 import React from "react";
 
+
 const Header = () => {
   return (
     <div className="flex justify-between gap-5 items-center w-full h-[56px] mb-8 ">

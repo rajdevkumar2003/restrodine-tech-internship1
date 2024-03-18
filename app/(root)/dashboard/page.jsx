@@ -4,10 +4,13 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
   const router = useRouter();
   const [items, setItems] = useState([]);
+  const [deletedItem, setDeletedItem] = useState("");
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -17,7 +20,7 @@ export default function Home() {
     };
 
     fetchItems();
-  }, []);
+  }, [items]);
 
   const handleDelete = async (id) => {
     try {
@@ -26,16 +29,20 @@ export default function Home() {
       });
   
       if (response.ok) {
-        
+        const data = await response.json();
+        setDeletedItem(data.itemName);
         router.refresh();
       }
+
+      
     } catch (error) {
       console.log(error);
     }
      
   };
   return (
-    <div className="px-6 py-4 ml-7 flex flex-col gap-7 ">
+    <div className="flex flex-col max-md:justify-items-center">
+    <div className="px-6 py-4 ml-7 flex flex-col gap-7 max-md:justify-items-center ">
       <h1 className="font-semibold text-2xl text-purple ">Menu Dashboard</h1>
       <div className=" flex w-fit">
       <svg
@@ -107,7 +114,7 @@ export default function Home() {
       </div>
       
       {/* items table */}
-      <div className="w-full border-black border-1  shadow-md   mt-9">
+      <div className="w-full flex flex-col justify-center border-black border-1  shadow-md rounded-s-md   mt-9">
       <div className="overflow-x-auto">
         <div className="flex flex-row bg-purple text-white">
           <div className="flex-grow border p-4">Category</div>
@@ -116,14 +123,14 @@ export default function Home() {
         </div>
 
         {items&&items.map((item, id) => (
-          <div key={id} className="flex flex-row ">
+          <div key={id} className="flex flex-row no-scrollbar ">
             <div className="flex-grow border-gray border-b-2  w-full p-4 text-sm">
               {item.category}
             </div>
             <div className="flex-grow border-gray border-b-2 w-full p-4 text-sm">
               {item.itemName}
             </div>
-            <div className="flex-grow flex gap-4 border-gray border-b-2 sm:pr-28  p-4 text-sm">
+            <div className="flex-grow flex max-sm:gap-2 max-sm:mr-3 gap-4 border-gray border-b-2 sm:pr-28  p-4 text-sm">
               {item.eta}
 
               <Image
@@ -131,7 +138,7 @@ export default function Home() {
                 height={20}
                 width={20}
                 onClick={() => handleDelete(item._id)}
-                className="cursor-pointer"
+                className="cursor-pointer max-sm:h-[15px] pr-[1px]"
                 src={"/assets/icons/bin.svg"}
               />
             </div>
@@ -140,6 +147,8 @@ export default function Home() {
       </div>
     </div>
       
+    </div>
+    
     </div>
   );
 }

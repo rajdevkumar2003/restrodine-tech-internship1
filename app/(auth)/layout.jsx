@@ -1,3 +1,5 @@
+
+
 const Layout = ({ children }) => {
   return (
     <div
@@ -7,6 +9,7 @@ const Layout = ({ children }) => {
      justify-center bg-pink-900 "
     >
       {children}
+      
     </div>
   );
 };
