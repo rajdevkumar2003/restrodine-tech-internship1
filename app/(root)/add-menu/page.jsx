@@ -39,13 +39,18 @@ const page = () => {
           });
     
           if (res.ok) {
+            toast(`${itemName} added`);
             const form = e.target;
             form.reset();
-            router.push("/dashboard");
-            toast(`${itemName} added`)
+            
+            
           } else {
+            toast(`Please fill all the feilds.`)
             console.log("Item saving failed.");
           }
+
+          router.push("/dashboard");
+          
     } catch (error) {
         
     }
