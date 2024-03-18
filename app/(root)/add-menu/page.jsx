@@ -48,8 +48,6 @@ const page = () => {
             toast(`Please fill all the feilds.`)
             console.log("Item saving failed.");
           }
-
-          router.push("/dashboard");
           
     } catch (error) {
         
@@ -134,11 +132,7 @@ const page = () => {
                 Save
               </button>
             </div>
-            {errorTxt && (
-              <p className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
-                {errorTxt}
-              </p>
-            )}
+            
           </form>
         </div>
       </div>

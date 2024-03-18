@@ -31,7 +31,8 @@ export default function Home() {
       if (response.ok) {
         const data = await response.json();
         setDeletedItem(data.itemName);
-        router.refresh();
+        toast(`Item ${data.itemName} deleted`)
+        setDeletedItem("");
       }
 
       
