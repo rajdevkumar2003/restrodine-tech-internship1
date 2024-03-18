@@ -115,7 +115,7 @@ export default function Home() {
       </div>
       
       {/* items table */}
-      <div className="w-full flex flex-col justify-center border-black border-1  shadow-md rounded-s-md   mt-9">
+      <div className="w-full flex flex-col justify-center  border-black border-1  shadow-md rounded-s-md   ">
       <div className="overflow-x-auto">
         <div className="flex flex-row bg-purple text-white">
           <div className="flex-grow border p-4">Category</div>

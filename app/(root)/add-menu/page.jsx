@@ -54,7 +54,7 @@ const page = () => {
     }
   };
   return (
-    <div className="px-6 py-4 flex flex-col   max-md:text-center  overscroll-none ">
+    <div className="px-6 py-4 flex flex-col gap-6  max-md:text-center  overscroll-none ">
       <h1 className=" text-[22px] ml-3 text-purple ">
         Menu Details
       </h1>

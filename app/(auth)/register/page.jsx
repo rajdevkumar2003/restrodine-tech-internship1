@@ -64,7 +64,7 @@ const page = () => {
   };
 
   return (
-    <div className="rounded-md bg-white min-h-[610px] w-[374px] px-5 py-4">
+    <div className="rounded-md bg-white max-md:w-[320px] min-h-[610px] w-[374px] px-5 py-4">
       <h2 className="text-black font-semibold ">Welcome to</h2>
       <h1 className="font-bold text-3xl text-purple py-3 ">RestroDineTech</h1>
       <div className="flex flex-col gap-3">
