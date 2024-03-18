@@ -51,7 +51,7 @@ const page = () => {
     }
   };
   return (
-    <div className="px-6 py-4 flex flex-col  gap-2 max-md:text-center  overscroll-none ">
+    <div className="px-6 py-4 flex flex-col   max-md:text-center  overscroll-none ">
       <h1 className=" text-[22px] ml-3 text-purple ">
         Menu Details
       </h1>
@@ -59,7 +59,7 @@ const page = () => {
         className="flex 
        min-h-screen w-[80vw]
        items-center 
-       justify-center "
+       justify-center mt-[-50px]"
       >
         <div className="rounded-md bg-gray-50 h-[580px] max-md:h-[500px] justify-self-center max-md:mx-auto max-md:w-[320px] w-[394px] px-8 py-4 flex flex-col border-black border-1 shadow-md">
           <h1 className="font-medium text-center py-3 text-[25px] ml-3 text-purple ">
